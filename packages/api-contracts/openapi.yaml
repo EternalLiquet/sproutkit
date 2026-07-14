@@ -1,0 +1,16 @@
+openapi: 3.1.0
+info:
+  title: SproutKit API
+  version: 0.1.0
+paths:
+  /health:
+    get:
+      operationId: health
+      responses:
+        '200':
+          description: Service is healthy.
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: ok

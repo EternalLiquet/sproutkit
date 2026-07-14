@@ -1,0 +1,44 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version-file: apps/api/go.mod
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Install JS dependencies
+        run: pnpm install --ignore-scripts
+
+      - name: Build API
+        run: cd apps/api && go build ./...
+
+      - name: Test API
+        run: cd apps/api && go test ./...
+
+      - name: Build dashboard
+        run: cd apps/dashboard && pnpm build
+
+      - name: Typecheck dashboard
+        run: cd apps/dashboard && pnpm typecheck
+
+      - name: Build SDK
+        run: cd packages/sdk-typescript && pnpm build

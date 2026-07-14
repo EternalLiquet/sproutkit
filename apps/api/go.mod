@@ -7,18 +7,16 @@ tool (
 	entgo.io/ent/cmd/ent
 )
 
-require (
-	ariga.io/atlas/cmd/atlas v0.13.1
-	entgo.io/ent v0.14.6
-	github.com/go-chi/chi/v5 v5.3.1
-)
+require github.com/go-chi/chi/v5 v5.3.1
 
 require (
 	ariga.io/atlas v0.36.2-0.20250730182955-2c6300d0a3e1 // indirect
+	ariga.io/atlas/cmd/atlas v0.13.1 // indirect
 	cloud.google.com/go v0.103.0 // indirect
 	cloud.google.com/go/compute v1.7.0 // indirect
 	cloud.google.com/go/iam v0.3.0 // indirect
 	cloud.google.com/go/secretmanager v1.5.0 // indirect
+	entgo.io/ent v0.14.6 // indirect
 	github.com/1lann/promptui v0.8.1-0.20220708222609-81fad96dd5e1 // indirect
 	github.com/agext/levenshtein v1.2.3 // indirect
 	github.com/antlr/antlr4/runtime/Go/antlr v0.0.0-20220816024939-bc8df83d7b9d // indirect
